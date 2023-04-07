@@ -32,6 +32,6 @@ Gate::define('admin', function(User $user) {
 ```
 7. Tambahkan field baru dengan nama is_admin ke dalam table users, lalu masukan code dibawah ini
 ```php
-$table->bool('is_admin')->default(false);
+$table->boolean('is_admin')->default(false);
 ```
 8. Masukan/ganti menjadi angka 1 pada field is_admin jika user tersebut adalah admin
