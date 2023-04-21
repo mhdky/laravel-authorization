@@ -10,7 +10,7 @@ if(!auth()->check() || !auth()->user()->is_admin) {
   abort(433);
  }
 ```
-3. Daftarkan middleware yang telah dibuat dengan cara buka file dengan nama ` Kernel.php ` yang ada di folder ` app/http/Kernel.php ` lalu masukan kode di bawah ini pada fariable ` $routeMeddleware `
+3. Daftarkan middleware yang telah dibuat dengan cara buka file dengan nama ` Kernel.php ` yang ada di folder ` app/http/Kernel.php ` lalu masukan kode di bawah ini pada variable ` $routeMeddleware `
 ```php
 admin => \App\Http\Middleware\IsAdmin::class 
 ```
