@@ -12,7 +12,7 @@ if(!auth()->check() || !auth()->user()->is_admin) {
 ```
 3. Daftarkan middleware yang telah dibuat dengan cara buka file dengan nama ` Kernel.php ` yang ada di folder ` app/http/Kernel.php ` lalu masukan kode di bawah ini pada variable ` $routeMeddleware `
 ```php
-admin => \App\Http\Middleware\IsAdmin::class 
+'admin' => \App\Http\Middleware\IsAdmin::class 
 ```
 4. Buka ` web.php ` lalu tambahkan middleware yang telah dibuat ke route yang diinginkan
 ```php
@@ -20,6 +20,8 @@ admin => \App\Http\Middleware\IsAdmin::class
 ```
 5. Buat ` gates ` dengan cara buka file ` AppServiceProvider.php ` yang ada di folder ` app/Providers/AppServiceProvider.php ` lalu tulis code dibawah ini pada method ` boot `
 ```php
+use Illuminate\Support\Facades\Gate;
+
 Gate::define('admin', function(User $user) {
    return $user->is_admin;
 });
